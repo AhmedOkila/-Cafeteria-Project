@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>checks</title>
+
+    <!-- BootStrap@5  -->
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css" />
+
+    <style>
+      @import "css/header.css";
+      :root {
+        --main-color: #d3ad7f;
+        --black: #13131a;
+        --bg: #010103;
+        --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+      }
+
+      * {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: 0.2s linear;
+      }
+      body {
+        padding-top: 50px;
+       
+      }
+
+      html {
+        overflow-x: hidden;
+        scroll-padding-top: 9rem;
+        scroll-behavior: smooth;
+
+      }
+
+      html::-webkit-scrollbar {
+        width: 0.8rem;
+      }
+
+      html::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      html::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 5rem;
+      }
+
+      body {
+        background-image: url(./assets/images/landing-page/home-img.jpeg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      .hiddenRow {
+        padding: 0 !important;
+      }
+      .btn-alert {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.9rem 3rem;
+        font-size: 1.7rem;
+        color: #fff;
+        background: var(--main-color);
+        cursor: pointer;
+        border-radius: 0.25rem;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <header class="header" id="header"></header>
+
+    <br /><br /><br>
+    <div>
+      <div class="container">
+        <div class="text-light m-3 mt-5 p-2 d-flex align-items-baseline w-50">
+          <span class="h4 px-2">from</span>
+          <input class="form-control w-50 me-2" id="startDate" type="date" value="2022-03-02" />
+          <span class="h4 px-2">to</span>
+          <input class="form-control w-50" id="endDate" type="date" value="2022-03-30" />
+  
+          <button class="btn btn-secondary mx-2" onclick="filter()">Filter</button>
+        </div>
+      </div><br>
+
+      <div class="container">
+        <div class="col-md-12">
+          <div class="card bg-dark text-light">
+            <div class="card-header bg-secondary text-center fs-3">Checks</div>
+            <div class="card-body">
+              <table class="table table-striped text-light">
+                <!-- first table head -->
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+
+                <tbody id="checksTableBody">
+                  <!--  user -->
+                  <tr data-bs-toggle="collapse" data-bs-target="#demo1">
+                    <td>
+                      <button class="btn">
+                        <span>+</span>
+                      </button>
+                    </td>
+                    <td>Hassan</td>
+                    <td>$100</td>
+                  </tr>
+                  <!-- user orders -->
+                  <tr>
+                    <td colspan="12" class="hiddenRow">
+                      <div class="collapse" id="demo1">
+                        <table class="table table-dark table-striped">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>Order Date</th>
+                              <th>Amount</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr
+                              data-bs-toggle="collapse"
+                              data-bs-target="#demo10"
+                            >
+                              <td>+</td>
+                              <td>Wed Mar 02 2022 16:43:23</td>
+                              <td>$10</td>
+                            </tr>
+
+                            <!-- oredr details -->
+                            <tr>
+                              <td colspan="12" class="hiddenRow">
+                                <div id="demo10" class="collapse">
+                                  <div
+                                    class="d-flex justify-content-around my-3"
+                                  >
+                                    <!-- item -->
+                                    <div
+                                      style="border: 1px solid white"
+                                      class="text-center p-2 border-1"
+                                    >
+                                      <img
+                                        src="assets/images/landing-page/menu-1.png"
+                                        alt=""
+                                      />
+                                      <div>price: $<span>15.12</span></div>
+                                      <div>quantity: <span>3</span></div>
+                                    </div>
+                                    <!-- item -->
+                                    <div
+                                      style="border: 1px solid white"
+                                      class="text-center p-2 border-1"
+                                    >
+                                      <img
+                                        src="assets/images/landing-page/menu-1.png"
+                                        alt=""
+                                      />
+                                      <div>price: $<span>15.12</span></div>
+                                      <div>quantity: <span>3</span></div>
+                                    </div>
+                                    <!-- item -->
+                                    <div
+                                      style="border: 1px solid white"
+                                      class="text-center p-2 border-1"
+                                    >
+                                      <img
+                                        src="assets/images/landing-page/menu-1.png"
+                                        alt=""
+                                      />
+                                      <div>price: $<span>15.12</span></div>
+                                      <div>quantity: <span>3</span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!--  user -->
+                  <tr data-bs-toggle="collapse" data-bs-target="#order1">
+                    <td>
+                      <button class="btn btn-default btn-xs">
+                        <span>+</span>
+                      </button>
+                    </td>
+                    <td>Hassan</td>
+                    <td>$100</td>
+                  </tr>
+
+                  <!-- user orders -->
+                  <tr>
+                    <td colspan="12" class="hiddenRow">
+                      <div class="collapse" id="demo1">
+                        <table class="table table-dark table-striped">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>Order Date</th>
+                              <th>Amount</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr
+                              data-bs-toggle="collapse"
+                              data-bs-target="#demo10"
+                            >
+                              <td>+</td>
+                              <td>Wed Mar 02 2022 16:43:23</td>
+                              <td>$10</td>
+                            </tr>
+
+                            <!-- order details -->
+                            <tr>
+                              <td colspan="12" class="hiddenRow">
+                                <div id="demo10" class="collapse"></div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BootStrap@5  -->
+    <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./index.js"></script>
+
+    <script src="./js/addHeader.js"></script>
+
+    <script src="./js/check.js"></script>
+  </body>
+</html>

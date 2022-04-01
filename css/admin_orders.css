@@ -1,0 +1,93 @@
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  }
+body{
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../assets/images/landing-page/home-img.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+.order, table{
+    border: 2px solid black;
+    width: 60vw;
+    border-collapse: collapse;
+}
+.order{
+    margin-bottom: 20px;
+}
+.header,.body{
+    border: 1px solid grey;
+}
+table{
+    table-layout: fixed;
+}
+th, td{
+    border-right: 1px solid black;
+    word-wrap: break-word;
+}
+th{
+    border-bottom: 1px solid black;
+    color: red;
+    background-color: black;
+    opacity: .9;
+}
+td{
+    text-align: center;
+}
+.body{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+img{
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
+.footer{
+    float: right;
+    margin: 5px;
+}
+
+.image{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+#header{
+    background-color: black;
+    opacity: 1;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 5px 6rem;
+}
+
+#logo{
+    width: 73px;
+    height: 61px;
+}
+
+header nav a{
+    margin: 0 12px;
+    color: white;
+}
+
+h1{
+    padding: 20px 0;
+    color: red;
+}
+
+.btn{
+    margin: auto 0;
+    color: antiquewhite;
+}
